@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
         height : 32,
         fontSize: 14,
         padding: 7,
+        paddingBottom:11,
         color: '#000'
     }
 });

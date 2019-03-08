@@ -33,17 +33,21 @@ export const styles = StyleSheet.create({
         height:'50%',
         fontSize:12,
     },
+   
     buttonText:{
         backgroundColor:"#00BCD4",
         fontWeight: 'bold',
-        fontSize: 20
+        fontSize: 20,
+        marginTop:'10%'
     },
     touch:{
         alignItems: 'center',
         backgroundColor: '#00BCD4',
         justifyContent:'center',
         flex:1,
-        height:40
+        // height:'100%',
+        marginTop:'20%',
+        // flexDirection:'/'
         // width:'10%'
     },
 

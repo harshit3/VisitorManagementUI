@@ -74,7 +74,7 @@ export default class InputField extends Component {
     } else {
       return (
         <View style={styles.inputFieldContainer}>
-          <Text style={this.state.isFocused ? styles.label : ''}>
+          <Text style={styles.label}>
             {this.state.isFocused ? this.props.placeholder : ''}
           </Text>
           <TextInput
