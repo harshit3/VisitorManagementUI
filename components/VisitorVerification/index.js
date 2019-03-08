@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Animated } from 'react-native';
+import { View, TextInput, Animated } from 'react-native';
 import QRCodeScan from '../QRCodeScanner';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import { styles } from './style';
 
 class VisitorVerification extends Component {
     static navigationOptions = {
-        title: 'Print Gatepass'
+        title: 'Scan QR Code'
     }
 
     state = {
+        qrCode: '',
         animatedValue: new Animated.Value(0)
     }
 
@@ -20,15 +21,17 @@ class VisitorVerification extends Component {
 
     handleChange = (text) => {
         this.setState({
-            code: text
+            qrCode: text
         })
     }
 
     render() {
-        console.log(this.state.isFocus)
         return (
             <View style={{flex:1,justifyContent: 'center'}}>
-                <QRCodeScan showPanel={this.showPanel} />
+                <QRCodeScan 
+                    showPanel={this.showPanel} 
+                    handleChange={this.handleChange}
+                />
                 <SlidingUpPanel 
                     ref={node => this.panel = node}
                     draggableRange={{top:500,bottom:0}}

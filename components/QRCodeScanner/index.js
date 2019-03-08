@@ -8,33 +8,25 @@ class QRCodeScan extends Component {
   constructor(props){
     super(props);
     this.onQRCodeRead = this.onQRCodeRead.bind(this);
-    this.state={}
   }
 
   onQRCodeRead(e){
-    this.setState({
-      scanResult: e.data
-    })
+    this.props.handleChange(e.data)
   }
   
   render() {
         return (
             <QRCodeScanner
                 onRead={this.onQRCodeRead}
+                reactivate={true}
+                reactivateTimeout={3000}
                 captureAudio={true}
                 showMarker={true}
                 markerStyle={
                   {borderColor: '#59cdff'}
                 }
-                topContent={
-                  <View style={styles.contentContainer}>
-                    <Text style={styles.centerText}>
-                      Scan <Text style={styles.textBold}>QR Code</Text> to get gate pass   
-                    </Text>
-                  </View>
-                }
                 bottomContent={
-                  <View style={styles.contentContainer}>
+                  <View style={styles.bottomContentContainer}>
                     <TouchableOpacity 
                       style={styles.buttonTouchable}
                       onPress={this.props.showPanel}
