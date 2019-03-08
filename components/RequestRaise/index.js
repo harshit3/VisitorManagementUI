@@ -7,15 +7,26 @@ class RequestRaise extends Component {
     static navigationOptions = {
         title: 'Raise Visit Request'
     }      
-
+    options = [
+        ['newJoinee','New Joinee'],
+        ['forgotId','Forgot/Lost Card'],
+        ['visitor','Visitor'],
+        ['vip','VIP'],
+        ['family','Family'],
+        ['conferenceAttendee','Conference Attendee'],
+        ['client','Client'],
+        ['vendor','Vendor'],
+        ['interviewee','Interviewee'],
+        ['guest','Guest']
+    ]
+    
     render() {
-        const options = ['New Joinee','Forgot/Lost Card','Visitor','VIP','Family','Conference Attendee','Client','Vendor','Interviewee','Guest']
         return (
             <View
                 style={{flex:1}}
             >
                 <Grid
-                    data={options}
+                    data={this.options}
                     renderItem={(data, i) => 
                         <Option 
                             option={data} 
