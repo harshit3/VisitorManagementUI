@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
     chip: {
         borderColor: '#848787',
         borderWidth: 1,
-        margin: 4,
-        paddingVertical: 5,
-        paddingHorizontal: 5,
+        margin: 2,
+        // paddingVertical: 5,
+        paddingHorizontal: 2,
         borderRadius: 15
     },
     chipCloseBtn: {
