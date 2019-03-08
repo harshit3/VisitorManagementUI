@@ -2,9 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     formContainer:{
-        flex:1,
-        justifyContent:'space-between',
-        flexDirection:'column',
+        // flex:1,
+        // justifyContent:'space-between',
+        // flexDirection:'column',
     },
     formBodyExpand:{
         flex:10,
@@ -43,6 +43,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#00BCD4',
         justifyContent:'center',
         flex:1,
+        // width:'10%'
     },
 
 });

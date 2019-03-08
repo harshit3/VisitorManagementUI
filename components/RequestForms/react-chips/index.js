@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput,ScrollView, StyleSheet, Alert } from 'react-native';
 import Chips from './chips';
 
 class ReactChipsInput extends React.Component {

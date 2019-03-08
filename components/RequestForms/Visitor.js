@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { BackHandler, Alert, TouchableOpacity, Text, View } from 'react-native';
+import { BackHandler, Alert, TouchableOpacity, Text, View,ScrollView } from 'react-native';
 import { styles } from './FormStyle';
 import { requestParameters } from '../../constants';
 import InputField from './InputField'
 
 export default class Visitor extends Component {
   state = {}
-  formObject={}
+  formObject = {}
 
   static navigationOptions = {
     title: 'Enter particulars below'
-  } 
+  }
 
-  saveForm = (fieldName,fieldValue) => {
+  saveForm = (fieldName, fieldValue) => {
     // console.warn('This is  form parent', fieldName , fieldValue)
     this.formObject[fieldName] = fieldValue
     // console.warn('After seeting in parent', this.formObject)
@@ -24,19 +24,19 @@ export default class Visitor extends Component {
   constructor(props) {
     super(props)
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-}
+  }
 
-  componentWillMount(){
+  componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
     // console.warn('Component will mount now')
     this.setState({
-      fieldFocused:false
+      fieldFocused: false
     })
   }
 
-componentWillUnmount() {
+  componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
-}
+  }
   showAlert = () => {
     // console.warn('Please confirm')
     Alert.alert(
@@ -57,49 +57,43 @@ componentWillUnmount() {
 
   };
 
-  fieldFocused = (bol)=>{
+  fieldFocused = (bol) => {
     // console.warn('Field focused called as',bol)
     this.setState({
-      fieldFocused:bol
+      fieldFocused: bol
     })
   }
   handleBackButtonClick() {
     this.setState({
-      fieldFocused:false
+      fieldFocused: false
     })
-}
+  }
 
   render() {
     const visitorType = this.props.navigation.getParam('visitorType');
     return (
-      <View style={styles.formContainer}>
-        <View style={this.state.fieldFocused ? styles.formBodyShrink : styles.formBodyExpand}>
+      <ScrollView contentContainerStyle={styles.formContainer}>
+        <View style={styles.formBodyExpand}>
           {requestParameters[visitorType].map((field) => {
             return (
               <InputField
-                key={field.fieldName}
-                fieldName={field.fieldName}
-                placeholder={field.placeholder}
-                selectionColor={field.selectionColor}
-                keyboardType={field.keyboardType}
-                focusedUnderlineColor={field.focusedUnderlineColor}
-                blurUnderlineColor={field.blurUnderlineColor}
+                {...field}
                 saveForm={this.saveForm}
-                fieldFocused = {this.fieldFocused}
-                formObject = {this.formObject}
-                >
+                fieldFocused={this.fieldFocused}
+                formObject={this.formObject}
+              >
               </InputField>
             )
-          })}    
-      </View>
-            <TouchableOpacity onPress={this.onPressButton}
-            style={styles.touch}
-            onPress={this.showAlert}
-            >
-              
-              <Text  style={styles.buttonText}>Submit</Text>
-            </TouchableOpacity>  
-     </View>
+          })}
+        </View>
+        <TouchableOpacity onPress={this.onPressButton}
+          style={styles.touch}
+          onPress={this.showAlert}
+        >
+
+          <Text style={styles.buttonText}>Submit</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 }
