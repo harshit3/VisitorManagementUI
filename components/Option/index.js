@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { styles } from './style';
 
 const colors = [ '#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50' ];
@@ -13,16 +14,26 @@ function generateColors(){
     return(colors[random])
 }
 
-export default function Option(props) {
-    return (
-        <TouchableOpacity
-            style={{...styles.optionContainer, backgroundColor: `${generateColors()}`}}
-        >
-            <Text
-                style={styles.text}
+class Option extends React.Component {
+
+    goToRaiseRequest = () => {
+        this.props.navigation.navigate('visitor',{ visitorType: this.props.option[0] })
+    }
+
+    render(){
+        return (
+            <TouchableOpacity
+                onPress={this.goToRaiseRequest}
+                style={{...styles.optionContainer, backgroundColor: `${generateColors()}`}}
             >
-                {props.option}
-            </Text>
-        </TouchableOpacity>
-    )
+                <Text
+                    style={styles.text}
+                >
+                    {this.props.option[1]}
+                </Text>
+            </TouchableOpacity>
+        )
+    }
 }
+
+export default withNavigation(Option);
