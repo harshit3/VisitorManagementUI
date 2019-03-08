@@ -68,7 +68,7 @@ export default class InputField extends Component {
       // console.warn('While rendering',this.props.formObject)
       return (
         
-          <ReactChipsInput onBlur={(chips) => this.handleNameAdd()} handleNameRemove={this.handleNameRemove} label="Enter Names" initialChips={this.props.formObject.name} onChangeChips={(chips) => this.handleNameAdd(chips[chips.length - 1])} alertRequired={false} chipStyle={{ borderColor: 'blue', backgroundColor: 'grey' }} />
+          <ReactChipsInput onBlur={(chips) => this.handleNameAdd()} handleNameRemove={this.handleNameRemove}  initialChips={this.props.formObject.name} onChangeChips={(chips) => this.handleNameAdd(chips[chips.length - 1])} alertRequired={false} chipStyle={{ borderColor: 'blue', backgroundColor: 'grey' }} />
        
       )
     } else {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput,ScrollView, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, ScrollView, StyleSheet, Alert } from 'react-native';
 import Chips from './chips';
 
 class ReactChipsInput extends React.Component {
@@ -46,12 +46,13 @@ class ReactChipsInput extends React.Component {
     }
     render() {
         const { label, chipStyle } = this.props;
-        const inputLabel = (label) ? label : 'Enter your text'
+        const inputLabel = (isFocused) ? 'Entered Names' : 'Press Return to enter name'
         const { isFocused, inputText } = this.state;
         const labelStyle = {
             position: 'absolute',
             left: 5,
-            top: !isFocused ? 12 : 1,
+            top: !isFocused ? 1 : 1,
+            opacity: !isFocused ? 0 : 1,
             fontSize: !isFocused ? 14 : 12,
             color: !isFocused ? '#aaa' : '#000',
         }
@@ -68,24 +69,27 @@ class ReactChipsInput extends React.Component {
                     <Text style={labelStyle}>
                         {inputLabel}
                     </Text>
+                    <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
+                        {chips}
+                    </View>
                     <TextInput
                         style={styles.textInput}
                         onFocus={this.handleFocus}
                         onChangeText={(text) => this.handleChangeText(text)}
                         onSubmitEditing={this.handleBlur}
                         value={inputText}
+                        underlineColorAndroid={isFocused ? '#6d9ada' : '9b9b9b'}
+                        placeholder={chips.length > 0 ? null : 'Enter one or more names'}
                     />
                 </View>
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                    {chips}
-                </View>
+
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
     textInput: {
-        height: 32,
+        height : 32,
         fontSize: 14,
         padding: 7,
         color: '#000'
