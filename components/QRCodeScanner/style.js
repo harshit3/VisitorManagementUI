@@ -3,19 +3,38 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     centerText: {
       fontSize: 18,
-      padding: 45,
+      marginBottom: 45,
       color: '#777',
+    },
+    centerSuccessText: {
+      fontSize: 18,
+      marginBottom: 45,
+      color: 'green',
     },
     textBold: {
       fontWeight: '500',
       color: '#000',
     },
+    textSuccessBold: {
+      fontWeight: '500',
+      color: 'green',
+    },
     bottomContentContainer:{
         flex:1,
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        backgroundColor: 'white',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         marginTop: -20
+    },
+    bottomInputContainer:{
+      flex:1,
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      backgroundColor: 'white',
+    },
+    topContentContainer:{
+      flex:1,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     buttonText: {
       fontSize: 21,
@@ -27,17 +46,19 @@ export const styles = StyleSheet.create({
       height: 40,
       borderRadius: 1,
     },
-    topContentContainer:{
-      flex:1,
-      justifyContent: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
     input: {
       flex: 5,
       height: 40,
       borderBottomWidth: 1,
       borderBottomColor: 'black',
       paddingBottom: 0,
+      marginLeft: 5,
+    },
+    skipButton: {
+      flex: 1
+    },
+    linkText: {
+      color: 'blue',
+      fontSize: 20
     }
   });
