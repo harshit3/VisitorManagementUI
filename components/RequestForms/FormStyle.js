@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
     formScrollContainer:{
-        height:Dimensions.get("window").height - 0,
+        height:Dimensions.get("window").height,
         // justifyContent:'space-around',
         // flexDirection:'column',
     },
@@ -11,22 +11,23 @@ export const styles = StyleSheet.create({
         // height:Dimensions.get("window").height - 0,
         // justifyContent:'space-around',
         // flexDirection:'column',
-        paddingBottom:'5%'
+        // paddingBottom:'5%'
+        // height:'100%',
     },
     formBodyExpand:{
         flex:10,
         flexDirection:'column',
-        justifyContent:'space-evenly',
+        justifyContent:'space-around',
     },
     formBodyShrink:{
         flex:10,
         flexDirection:'column',
-        justifyContent:'space-evenly',
+        justifyContent:'space-around',
     },
     inputFieldContainer:{
         flex:1,
         paddingLeft:5,
-        padding:20,
+        // padding:20,
         // marginBottom
     },
     chipInput:{
@@ -59,7 +60,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#00BCD4',
         justifyContent:'center',
         flex:1,
-        height:'5%',
+        height:'10%',
         // marginTop:'20%',
         flexDirection:'column',
         // padding:2
