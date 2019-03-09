@@ -21,9 +21,11 @@ export const styles = StyleSheet.create({
     },
     bottomContentContainer:{
         flex:1,
+        width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        marginTop: -20
+        marginTop: -50,
+        backgroundColor: 'white',
     },
     bottomInputContainer:{
       flex:1,
@@ -55,10 +57,12 @@ export const styles = StyleSheet.create({
       marginLeft: 5,
     },
     skipButton: {
-      flex: 1
+      flex: 1,
+      backgroundColor: 'white'
     },
     linkText: {
       color: 'blue',
-      fontSize: 20
+      fontSize: 20,
+      backgroundColor: 'white',
     }
   });
