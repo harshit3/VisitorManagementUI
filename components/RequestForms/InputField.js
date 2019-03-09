@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, TextInput, ToastAndroid } from 'react-native';
 import { styles } from './FormStyle';
 import ReactChipsInput from './react-chips/index';
-import SlidingUpPanel from 'rn-sliding-up-panel';
 export default class InputField extends Component {
   state = {
     isFocused: false
@@ -13,7 +12,7 @@ export default class InputField extends Component {
     this.setState({
       isFocused: true
     });
-    if (this.props.fieldName == 'name') {
+    if (this.props.fieldName == 'visitorName') {
       // console.warn('This is name field')
 
     }
@@ -30,7 +29,7 @@ export default class InputField extends Component {
   }
 
   handleChangeText = text => {
-    if (this.props.fieldName == 'name') {
+    if (this.props.fieldName == 'visitorName') {
       this.setState({
         value: [text]
       }, () => this.props.saveForm(this.props.fieldName, this.state.value));
@@ -55,7 +54,7 @@ export default class InputField extends Component {
   handleNameRemove = (index) => {
     // console.warn('Name remove at',index,'from',this.state)
 
-    newArray = (this.props.formObject.name)
+    newArray = (this.props.formObject.visitorName)
     newArray.splice(index, 1);
     this.props.saveForm(this.props.fieldName, newArray);
   }
@@ -72,11 +71,11 @@ export default class InputField extends Component {
     if(this.props.visitorCat == 'forgotId'){
       // this.props.saveForm(this.props.vistDate,(new Date()).toLocaleDateString());
     }
-    if (this.props.fieldName == 'name' && this.props.multipalNamesAllowed) {
+    if (this.props.fieldName == 'visitorName' && this.props.multipalNamesAllowed) {
       // console.warn('While rendering',this.props.formObject)
       return (
         
-          <ReactChipsInput onBlur={(chips) => this.handleNameAdd()} handleNameRemove={this.handleNameRemove}  initialChips={this.props.formObject.name} onChangeChips={(chips) => this.handleNameAdd(chips[chips.length - 1])} alertRequired={false} chipStyle={{ borderColor: '#008ba3', backgroundColor: '#00bcd4' }} />
+          <ReactChipsInput onBlur={(chips) => this.handleNameAdd()} handleNameRemove={this.handleNameRemove}  initialChips={this.props.formObject.visitorName} onChangeChips={(chips) => this.handleNameAdd(chips[chips.length - 1])} alertRequired={false} chipStyle={{ borderColor: '#008ba3', backgroundColor: '#00bcd4' }} />
        
       )
     } else {

@@ -61,7 +61,7 @@ export default class Visitor extends Component {
   }
   showAlert = () => {
     // console.warn('Please confirm')
-    this.validateForm( this.state.formObject)
+    // this.validateForm( this.state.formObject)
     Alert.alert(
       'Send form data',
       JSON.stringify(this.state.formObject),

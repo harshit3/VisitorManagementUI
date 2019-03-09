@@ -25,6 +25,12 @@ class QRCodeScan extends Component {
     this.props.handleChange(this.state.code)
   }
 
+  handleSkip = () => {
+    this.setState({
+      count: this.state.count + 1
+    }, () => this.props.handleChange(''))  
+  }
+
   onQRCodeRead(e){
     this.setState({
       count: this.state.count + 1
@@ -35,7 +41,7 @@ class QRCodeScan extends Component {
         return (
             <QRCodeScanner
                 onRead={this.onQRCodeRead}
-                reactivate={this.state.count===2?false:true}
+                reactivate={this.state.count===1?false:true}
                 reactivateTimeout={1000}
                 captureAudio={true}
                 topContent={
@@ -67,6 +73,7 @@ class QRCodeScan extends Component {
                     </View>
                       {this.props.isQRCode
                       ?<TouchableOpacity
+                        onPress={this.handleSkip}
                         style={styles.skipButton}
                       >
                         <Text
