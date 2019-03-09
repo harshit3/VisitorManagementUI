@@ -24,8 +24,8 @@ export default class InputField extends Component {
     // console.log('This is event',this.state.value)
     this.setState({
       isFocused: false
-    });
-    // console.log('Going to set key as ',this.props.fieldName)
+    });  
+    // console.log('Going tevento set key as ',this.props.fieldName)
     // this.props.fieldFocused(false)
   }
 
@@ -33,14 +33,13 @@ export default class InputField extends Component {
     if (this.props.fieldName == 'name') {
       this.setState({
         value: [text]
-      });
+      }, () => this.props.saveForm(this.props.fieldName, this.state.value));
     } else {
       this.setState({
         value: text
-      });
+      },() => this.props.saveForm(this.props.fieldName, this.state.value));
     }
     // If above behaves asynchronusly foloowing line may not set the ste properly
-    this.props.saveForm(this.props.fieldName, this.state.value);
   }
   handleNameAdd = name => {
     console.warn('Chip added')

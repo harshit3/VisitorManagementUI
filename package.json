@@ -14,8 +14,10 @@
     "react-native-fontawesome": "^6.0.1",
     "react-native-gesture-handler": "^1.0.17",
     "react-native-grid-component": "^1.1.0",
+    "react-native-pdf": "^5.0.11",
     "react-native-qrcode-scanner": "^1.1.2",
     "react-navigation": "^3.3.2",
+    "rn-fetch-blob": "^0.10.15",
     "rn-sliding-up-panel": "^2.0.2"
   },
   "devDependencies": {
