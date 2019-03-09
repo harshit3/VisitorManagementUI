@@ -35,10 +35,6 @@ class QRCodeScan extends Component {
                 reactivate={true}
                 reactivateTimeout={1000}
                 captureAudio={true}
-                showMarker={true}
-                markerStyle={
-                  {borderColor: '#59cdff'}
-                }
                 topContent={
                   <View style={styles.topContentContainer}>
                     <Text style={!this.props.isQRCode?styles.centerText:styles.centerSuccessText}>

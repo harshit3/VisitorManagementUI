@@ -50,7 +50,19 @@ export default class Visitor extends Component {
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { text: 'OK', onPress: () => {
+          console.log(this.state.formObject)
+          fetch('http://192.168.43.77:8080/visitors',{
+            method: 'POST',
+            headers: {
+              "Content-Type":"application/json"
+            },
+            body: JSON.stringify(this.state.formObject)
+          })
+          .then(response => response.text())
+          .then(data => console.log(data))
+          .catch(error => console.log(error))
+        } },
       ],
       { cancelable: false },
     );
@@ -77,6 +89,7 @@ export default class Visitor extends Component {
           {requestParameters[visitorType].map((field) => {
             return (
               <InputField
+                key={field.fieldName}
                 {...field}
                 saveForm={this.saveForm}
                 fieldFocused={this.fieldFocused}
