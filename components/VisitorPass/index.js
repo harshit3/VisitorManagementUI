@@ -5,7 +5,7 @@ import Pdf from 'react-native-pdf';
 class VisitorPass extends Component {
 
     render() {
-      const source = {uri:this.props.navigation.getParam('base64'),cache:true};
+      const source = {uri:`data:application/pdf;base64,${this.props.navigation.getParam('base64')}`,cache:true};
       return(
         <View style={styles.container}>
           <Pdf

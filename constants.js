@@ -7,7 +7,7 @@ export const requestParameters = {
     visitor: [
 
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Visitor Names',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -32,7 +32,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Reference Employee Email ID',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -66,7 +66,7 @@ export const requestParameters = {
     vendor: [
 
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Vendor Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -91,7 +91,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Refrence Employee EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -125,7 +125,7 @@ export const requestParameters = {
     newJoinee: [
 
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Name of joinee',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -150,7 +150,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Reporting Manager EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -184,7 +184,7 @@ export const requestParameters = {
     forgotId: [
 
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Employee Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -209,7 +209,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Project Manager EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -244,7 +244,7 @@ export const requestParameters = {
     ],
     vip: [
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Visitor Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -269,7 +269,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Refrence Employee EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -303,7 +303,7 @@ export const requestParameters = {
     family: [
 
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Name of family member',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -328,7 +328,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Refrence Employee EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -361,7 +361,7 @@ export const requestParameters = {
     ],
     conferenceAttendee: [
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Attendee Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -386,7 +386,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Refrence Employee EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -420,7 +420,7 @@ export const requestParameters = {
     client: [
 
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Client Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -445,7 +445,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Refrence Employee EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -478,7 +478,7 @@ export const requestParameters = {
     ],
     interviewee: [
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Interviewee Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -503,7 +503,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'POC EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -536,7 +536,7 @@ export const requestParameters = {
     ],
     guest: [
         {
-            'fieldName': 'name',
+            'fieldName': 'visitorName',
             'placeholder': 'Guest Name',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,
@@ -561,7 +561,7 @@ export const requestParameters = {
             'keyboardType': 'default',
         },
         {
-            'fieldName': 'refEmployeeEmail',
+            'fieldName': 'refEmpMail',
             'placeholder': 'Refrence Employee EmailId',
             'selectionColor': selectionColor,
             'focusedUnderlineColor': focusedUnderlineColor,

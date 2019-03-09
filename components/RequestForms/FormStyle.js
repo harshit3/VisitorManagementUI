@@ -17,12 +17,12 @@ export const styles = StyleSheet.create({
     formBodyExpand:{
         flex:10,
         flexDirection:'column',
-        justifyContent:'space-around',
+        justifyContent:'flex-start',
     },
     formBodyShrink:{
         flex:10,
         flexDirection:'column',
-        justifyContent:'space-around',
+        justifyContent:'flex-start',
     },
     inputFieldContainer:{
         flex:1,
@@ -54,13 +54,14 @@ export const styles = StyleSheet.create({
         // marginTop:'10%'
     },
     touch:{
-        position:'absolute',
-        bottom:0,
+        // position:'absolute',
+        // bottom:0,
         alignItems: 'center',
         backgroundColor: '#00BCD4',
         justifyContent:'center',
-        flex:1,
+        // flex:1,
         height:'10%',
+        // opacity:0,
         // marginTop:'20%',
         flexDirection:'column',
         // padding:2

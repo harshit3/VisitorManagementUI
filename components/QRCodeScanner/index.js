@@ -9,7 +9,8 @@ class QRCodeScan extends Component {
   constructor(props){
     super(props);
     this.state = {
-      code: ''
+      code: '',
+      count: 0
     }
     this.onQRCodeRead = this.onQRCodeRead.bind(this);
   }
@@ -25,14 +26,16 @@ class QRCodeScan extends Component {
   }
 
   onQRCodeRead(e){
-    this.props.handleChange(e.data)
+    this.setState({
+      count: this.state.count + 1
+    }, () => this.props.handleChange(e.data)) 
   }
   
   render() {
         return (
             <QRCodeScanner
                 onRead={this.onQRCodeRead}
-                reactivate={true}
+                reactivate={this.state.count===2?false:true}
                 reactivateTimeout={1000}
                 captureAudio={true}
                 topContent={

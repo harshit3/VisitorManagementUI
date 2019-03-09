@@ -33,14 +33,13 @@ export default class InputField extends Component {
     if (this.props.fieldName == 'name') {
       this.setState({
         value: [text]
-      });
+      }, () => this.props.saveForm(this.props.fieldName, this.state.value));
     } else {
       this.setState({
         value: text
-      });
+      }, () => this.props.saveForm(this.props.fieldName, this.state.value));
     }
     // If above behaves asynchronusly foloowing line may not set the ste properly
-    this.props.saveForm(this.props.fieldName, this.state.value);
   }
   handleNameAdd = name => {
     console.warn('Chip added')

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BackHandler, Alert, TouchableOpacity, Text, View,ScrollView } from 'react-native';
+import { BackHandler, Alert, TouchableOpacity, Text, View,ScrollView, FlatList } from 'react-native';
 import { styles } from './FormStyle';
 import { requestParameters } from '../../constants';
 import InputField from './InputField'
@@ -43,6 +43,7 @@ export default class Visitor extends Component {
   }
 
   validateForm(formObject){
+    console.log(formObject)
     keysPresent = Object.keys(formObject)
     keysExpected = []
     requestParameters[this.props.navigation.getParam('visitorType')].forEach((obj)=>{
@@ -109,19 +110,18 @@ export default class Visitor extends Component {
       <View style={styles.formContainer}>
         <ScrollView contentContainerStyle={styles.formContainer}>
         <View style={styles.formBodyExpand}>
-          {requestParameters[visitorType].map((field) => {
-            return (
-              <InputField
-                key={field.fieldName}
-                {...field}
-                saveForm={this.saveForm}
-                fieldFocused={this.fieldFocused}
-                formObject={this.formObject}
-                visitorCat={visitorType}
-              >
-              </InputField>
-            )
-          })}
+          <FlatList
+            data={requestParameters[visitorType]}
+            renderItem={({item}) => <InputField
+                                        key={item.fieldName}
+                                        {...item}
+                                        saveForm={this.saveForm}
+                                        fieldFocused={this.fieldFocused}
+                                        formObject={this.formObject}
+                                        visitorCat={visitorType}
+                                      />
+            }
+          />
         </View>
         </ScrollView>
         <TouchableOpacity
