@@ -94,7 +94,7 @@ export default class Visitor extends Component {
   render() {
     const visitorType = this.props.navigation.getParam('visitorType');
     return (
-      <View>
+      <View style={styles.formContainer}>
         <ScrollView contentContainerStyle={styles.formContainer}>
         <View style={styles.formBodyExpand}>
           {requestParameters[visitorType].map((field) => {
