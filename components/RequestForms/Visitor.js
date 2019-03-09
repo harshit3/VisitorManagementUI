@@ -6,7 +6,11 @@ import InputField from './InputField'
 
 export default class Visitor extends Component {
   state = {}
-  formObject = {}
+  formObject = {
+    visitDate:(new Date()).toLocaleDateString(),
+    loginId:'user123@infosys.com',
+    visitorType: this.props.navigation.getParam('visitorType')
+  }
 
   static navigationOptions = {
     title: 'Enter particulars below'
@@ -37,8 +41,26 @@ export default class Visitor extends Component {
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
   }
+
+  validateForm(formObject){
+    keysPresent = Object.keys(formObject)
+    keysExpected = []
+    requestParameters[this.props.navigation.getParam('visitorType')].forEach((obj)=>{
+      keysExpected.push(obj.fieldName)
+    })
+    console.log('Expected keys ',keysExpected)
+    console.log('Present keys ',keysPresent)
+    keysPresent.forEach((key)=>{
+      if(keysExpected.includes(key)){
+        console.log(key,' is present')
+      }else{
+        console.log(key,' is not there')
+      }
+    })
+  }
   showAlert = () => {
     // console.warn('Please confirm')
+    this.validateForm( this.state.formObject)
     Alert.alert(
       'Send form data',
       JSON.stringify(this.state.formObject),
@@ -84,7 +106,8 @@ export default class Visitor extends Component {
   render() {
     const visitorType = this.props.navigation.getParam('visitorType');
     return (
-      <ScrollView contentContainerStyle={styles.formContainer}>
+      <View style={styles.formContainer}>
+        <ScrollView contentContainerStyle={styles.formContainer}>
         <View style={styles.formBodyExpand}>
           {requestParameters[visitorType].map((field) => {
             return (
@@ -94,19 +117,22 @@ export default class Visitor extends Component {
                 saveForm={this.saveForm}
                 fieldFocused={this.fieldFocused}
                 formObject={this.formObject}
+                visitorCat={visitorType}
               >
               </InputField>
             )
           })}
         </View>
-        <TouchableOpacity onPress={this.onPressButton}
+        </ScrollView>
+        <TouchableOpacity
           style={styles.touch}
           onPress={this.showAlert}
         >
 
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
-      </ScrollView>
+      
+      </View>
     );
   }
 }
