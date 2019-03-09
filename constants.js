@@ -1,6 +1,6 @@
 // import {styles} from './RequestForms/FormStyle'
 selectionColor = 'black'
-focusedUnderlineColor = '#6d9ada'
+focusedUnderlineColor = '#00bcd4'
 blurUnderlineColor = '#9b9b9b'
 
 export const requestParameters = {visitor:[

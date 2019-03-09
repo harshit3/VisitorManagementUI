@@ -78,7 +78,7 @@ class ReactChipsInput extends React.Component {
                         onChangeText={(text) => this.handleChangeText(text)}
                         onSubmitEditing={this.handleBlur}
                         value={inputText}
-                        underlineColorAndroid={isFocused ? '#6d9ada' : '9b9b9b'}
+                        underlineColorAndroid={isFocused ? '#00bcd4' : '#9b9b9b'}
                         placeholder={chips.length > 0 ? null : 'Enter one or more names'}
                     />
                 </View>
