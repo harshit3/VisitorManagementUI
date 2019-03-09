@@ -24,8 +24,8 @@ export default class InputField extends Component {
     // console.log('This is event',this.state.value)
     this.setState({
       isFocused: false
-    });  
-    // console.log('Going tevento set key as ',this.props.fieldName)
+    });
+    // console.log('Going to set key as ',this.props.fieldName)
     // this.props.fieldFocused(false)
   }
 
@@ -33,13 +33,14 @@ export default class InputField extends Component {
     if (this.props.fieldName == 'name') {
       this.setState({
         value: [text]
-      }, () => this.props.saveForm(this.props.fieldName, this.state.value));
+      });
     } else {
       this.setState({
         value: text
-      },() => this.props.saveForm(this.props.fieldName, this.state.value));
+      });
     }
     // If above behaves asynchronusly foloowing line may not set the ste properly
+    this.props.saveForm(this.props.fieldName, this.state.value);
   }
   handleNameAdd = name => {
     console.warn('Chip added')
@@ -59,10 +60,19 @@ export default class InputField extends Component {
     newArray.splice(index, 1);
     this.props.saveForm(this.props.fieldName, newArray);
   }
+  doNothing = () => {
+    // console.warn('Name remove at',index,'from',this.state)
+
+    // newArray = (this.props.formObject.name)
+    // newArray.splice(index, 1);
+    // this.props.saveForm(this.props.fieldName, newArray);
+  }
 
 
   render() {
-    
+    if(this.props.visitorCat == 'forgotId'){
+      // this.props.saveForm(this.props.vistDate,(new Date()).toLocaleDateString());
+    }
     if (this.props.fieldName == 'name' && this.props.multipalNamesAllowed) {
       // console.warn('While rendering',this.props.formObject)
       return (
@@ -88,7 +98,7 @@ export default class InputField extends Component {
             defaultValue={this.props.defaultValue}
             editable={this.props.editable}
             multipalNamesAllowed={this.props.multipalNamesAllowed}
-            returnKeyLabel='next'
+            
           />
         </View>
       );
