@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import { styles } from './style';
 
@@ -7,7 +7,20 @@ class QRCodeScan extends Component {
   
   constructor(props){
     super(props);
+    this.state = {
+      qrCode: ''
+    }
     this.onQRCodeRead = this.onQRCodeRead.bind(this);
+  }
+
+  handleChange = (text) => {
+    this.setState({
+      qrCode: text
+    })
+  }
+
+  handlePress = () => {
+    this.props.handleChange(this.state.qrCode)
   }
 
   onQRCodeRead(e){
@@ -27,11 +40,16 @@ class QRCodeScan extends Component {
                 }
                 bottomContent={
                   <View style={styles.bottomContentContainer}>
+                    <TextInput
+                      onChangeText={this.handleChange}
+                      style={styles.input}
+                      placeholder="Enter Manually"
+                    />
                     <TouchableOpacity 
+                      onPress={this.handlePress}
                       style={styles.buttonTouchable}
-                      onPress={this.props.showPanel}
                     >
-                        <Text style={styles.buttonText}>Enter Manually</Text>
+                        <Text style={styles.buttonText}>OK</Text>
                     </TouchableOpacity>
                   </View>
                 }

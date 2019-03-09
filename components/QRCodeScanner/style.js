@@ -10,28 +10,28 @@ export const styles = StyleSheet.create({
       fontWeight: '500',
       color: '#000',
     },
-    topContentContainer:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     bottomContentContainer:{
-      flex:1,
-      paddingTop: 25,
-      justifyContent: 'center',
-      alignItems: 'center',
+        flex:1,
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        backgroundColor: 'white',
+        marginTop: -20
     },
     buttonText: {
       fontSize: 21,
       color: 'rgb(0,122,255)',
     },
     buttonTouchable: {
+      flex: 1,
       justifyContent: 'center',
-      alignItems: 'center'
+      height: 40,
     },
     input: {
+      flex: 5,
+      height: 40,
       borderBottomWidth: 1,
       borderBottomColor: 'black',
-      paddingBottom: 0
+      paddingBottom: 0,
+      marginLeft: 5,
     }
   });
