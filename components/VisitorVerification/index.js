@@ -6,17 +6,26 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class VisitorVerification extends Component {
     static navigationOptions = {
-        title: 'Scan QR Code'
+        title: 'Scan Code'
     }
 
     state = {
+        isQRCode: false,
         qrCode: '',
+        laptopCode: '',
         animatedValue: new Animated.Value(0)
     }
 
-    handleChange = (text) => {
+    handleQRCodeChange = (text) => {
         this.setState({
-            qrCode: text
+            qrCode: text,
+            isQRCode: true
+        })
+    }
+
+    handleLaptopCodeChange = (text) => {
+        this.setState({
+            laptopCode: text,
         })
     }
 
@@ -25,7 +34,8 @@ class VisitorVerification extends Component {
         return (
             <View style={{flex:1,justifyContent: 'center'}}>
                 <QRCodeScan 
-                    handleChange={this.handleChange}
+                    isQRCode={this.state.isQRCode}
+                    handleChange={this.state.isQRCode?this.handleLaptopCodeChange:this.handleQRCodeChange}
                 />
             </View>
         );

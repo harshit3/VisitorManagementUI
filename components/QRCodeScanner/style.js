@@ -19,12 +19,19 @@ export const styles = StyleSheet.create({
     },
     buttonText: {
       fontSize: 21,
-      color: 'rgb(0,122,255)',
     },
     buttonTouchable: {
       flex: 1,
       justifyContent: 'center',
+      alignItems: 'center',
       height: 40,
+      borderRadius: 1,
+    },
+    topContentContainer:{
+      flex:1,
+      justifyContent: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     input: {
       flex: 5,
@@ -32,6 +39,5 @@ export const styles = StyleSheet.create({
       borderBottomWidth: 1,
       borderBottomColor: 'black',
       paddingBottom: 0,
-      marginLeft: 5,
     }
   });

@@ -8,19 +8,19 @@ class QRCodeScan extends Component {
   constructor(props){
     super(props);
     this.state = {
-      qrCode: ''
+      code: ''
     }
     this.onQRCodeRead = this.onQRCodeRead.bind(this);
   }
 
   handleChange = (text) => {
     this.setState({
-      qrCode: text
+      code: text
     })
   }
 
   handlePress = () => {
-    this.props.handleChange(this.state.qrCode)
+    this.props.handleChange(this.state.code)
   }
 
   onQRCodeRead(e){
@@ -37,6 +37,13 @@ class QRCodeScan extends Component {
                 showMarker={true}
                 markerStyle={
                   {borderColor: '#59cdff'}
+                }
+                topContent={
+                  <View style={styles.contentContainer}>
+                    <Text style={styles.centerText}>
+                      Scan <Text style={styles.textBold}>{!this.props.isQRCode?'QR Code':'Laptop Barcode'}</Text>   
+                    </Text>
+                  </View>
                 }
                 bottomContent={
                   <View style={styles.bottomContentContainer}>
