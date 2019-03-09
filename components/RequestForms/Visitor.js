@@ -94,7 +94,8 @@ export default class Visitor extends Component {
   render() {
     const visitorType = this.props.navigation.getParam('visitorType');
     return (
-      <ScrollView contentContainerStyle={styles.formContainer}>
+      <View>
+        <ScrollView contentContainerStyle={styles.formContainer}>
         <View style={styles.formBodyExpand}>
           {requestParameters[visitorType].map((field) => {
             return (
@@ -109,6 +110,7 @@ export default class Visitor extends Component {
             )
           })}
         </View>
+        </ScrollView>
         <TouchableOpacity
           style={styles.touch}
           onPress={this.showAlert}
@@ -116,7 +118,8 @@ export default class Visitor extends Component {
 
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
-      </ScrollView>
+      
+      </View>
     );
   }
 }
